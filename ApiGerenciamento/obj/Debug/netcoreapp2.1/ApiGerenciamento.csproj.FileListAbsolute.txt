@@ -1,0 +1,14 @@
+C:\Gerenciamento\ApiGerenciamento\bin\Debug\netcoreapp2.1\ApiGerenciamento.deps.json
+C:\Gerenciamento\ApiGerenciamento\bin\Debug\netcoreapp2.1\ApiGerenciamento.runtimeconfig.json
+C:\Gerenciamento\ApiGerenciamento\bin\Debug\netcoreapp2.1\ApiGerenciamento.runtimeconfig.dev.json
+C:\Gerenciamento\ApiGerenciamento\bin\Debug\netcoreapp2.1\ApiGerenciamento.dll
+C:\Gerenciamento\ApiGerenciamento\bin\Debug\netcoreapp2.1\ApiGerenciamento.pdb
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.csprojAssemblyReference.cache
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.csproj.CoreCompileInputs.cache
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.RazorAssemblyInfo.cache
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.RazorAssemblyInfo.cs
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.AssemblyInfoInputs.cache
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.AssemblyInfo.cs
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.RazorTargetAssemblyInfo.cache
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.dll
+C:\Gerenciamento\ApiGerenciamento\obj\Debug\netcoreapp2.1\ApiGerenciamento.pdb
