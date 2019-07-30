@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Gerenciamento\\ApiGerenciamento\\ApiGerenciamento.csproj": {}
+    "C:\\Gerenciamento\\apigerenciamento\\ApiGerenciamento.csproj": {}
   },
   "projects": {
-    "C:\\Gerenciamento\\ApiGerenciamento\\ApiGerenciamento.csproj": {
+    "C:\\Gerenciamento\\apigerenciamento\\ApiGerenciamento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Gerenciamento\\ApiGerenciamento\\ApiGerenciamento.csproj",
+        "projectUniqueName": "C:\\Gerenciamento\\apigerenciamento\\ApiGerenciamento.csproj",
         "projectName": "ApiGerenciamento",
-        "projectPath": "C:\\Gerenciamento\\ApiGerenciamento\\ApiGerenciamento.csproj",
+        "projectPath": "C:\\Gerenciamento\\apigerenciamento\\ApiGerenciamento.csproj",
         "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-        "outputPath": "C:\\Gerenciamento\\ApiGerenciamento\\obj\\",
+        "outputPath": "C:\\Gerenciamento\\apigerenciamento\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -3,14 +3,14 @@ using System;
 namespace ApiGerenciamento.Models{
     public class Cliente
     {
-        public int id { get; set; }
-        public DateTime datanascimento { get; set; }
-        public DateTime dataregistro { get; set; }
-        public string nome { get; set; }
-        public string email { get; set; }
-        public string endereco { get; set; }
-        public string cpf { get; set; }
-        public decimal credito { get; set; }
-        public string senha { get; set; }
+        public int Id { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public DateTime DataRegistro { get; set; }
+        public string Nome { get; set; }
+        public string Email { get; set; }
+        public string Endereco { get; set; }
+        public string Cpf { get; set; }
+        public decimal Credito { get; set; }
+        public string Senha { get; set; }
     }
 }

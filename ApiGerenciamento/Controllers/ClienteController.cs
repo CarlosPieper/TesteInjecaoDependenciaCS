@@ -1,5 +1,5 @@
+using ApiGerenciamento.Interfaces;
 using ApiGerenciamento.Models;
-using ApiGerenciamento.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
@@ -10,17 +10,18 @@ namespace ApiGerenciamento.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
-        ClienteRepository repositorio = new ClienteRepository();
-        MySqlConnection connection = Database.Connect();
+        private IClienteRepository repositorio;
+        public ClienteController(IClienteRepository repository)
+        {
+            this.repositorio = repository;
+        }
 
         #region Login
         [ActionName("Login")]
         [HttpGet]
         public Cliente Login(string cpf, string senha)
         {
-            connection.Open();
-            Cliente c = repositorio.Login(cpf, senha, connection);
-            connection.Close();
+            Cliente c = repositorio.Login(cpf, senha);
             return c;
         }
         #endregion
@@ -34,9 +35,7 @@ namespace ApiGerenciamento.Controllers
             Cliente c = JsonConvert.DeserializeObject<Cliente>(dados);
             try
             {
-                connection.Open();
-                repositorio.Incluir(c, connection);
-                connection.Close();
+                repositorio.Incluir(c);
             }
             catch (MySqlException ex)
             {
@@ -55,9 +54,7 @@ namespace ApiGerenciamento.Controllers
             bool success = true;
             try
             {
-                connection.Open();
-                repositorio.Excluir(id, connection);
-                connection.Close();
+                repositorio.Excluir(id);
             }
             catch (MySqlException ex)
             {
@@ -75,9 +72,7 @@ namespace ApiGerenciamento.Controllers
         {
             try
             {
-                connection.Open();
-                Cliente c = repositorio.BuscaPorId(id, connection);
-                connection.Close();
+                Cliente c = repositorio.BuscaPorId(id);
                 return c;
             }
             catch (MySqlException ex)
@@ -86,19 +81,17 @@ namespace ApiGerenciamento.Controllers
             }
         }
         #endregion
-    
+
         #region Alterar
         [ActionName("Alterar")]
         [HttpPost]
-        public bool Alterar (string dados)
+        public bool Alterar(string dados)
         {
             bool success = true;
             Cliente c = JsonConvert.DeserializeObject<Cliente>(dados);
             try
             {
-                connection.Open();
-                repositorio.Alterar(c, connection);
-                connection.Close();
+                repositorio.Alterar(c);
             }
             catch (MySqlException ex)
             {
