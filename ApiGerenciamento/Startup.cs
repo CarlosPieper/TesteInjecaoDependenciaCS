@@ -30,13 +30,9 @@ namespace ApiGerenciamento
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            MySqlConnection connection = new MySqlConnection(Configuration.GetConnectionString("MySqlConnectionString"));
+            MySqlConnection connection = new MySqlConnection();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IClienteRepository, ClienteRepository>();
-            services.AddSingleton<ClienteController>();
-            services.AddScoped<IClienteRepository>(factory => {
-                    return new ClienteRepository(connection);
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

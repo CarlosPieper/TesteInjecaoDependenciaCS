@@ -7,18 +7,19 @@ namespace ApiGerenciamento.Repositories
     public class ClienteRepository : IClienteRepository
     {
         MySqlConnection connection;
-        public ClienteRepository(MySqlConnection conn){
+        public ClienteRepository(MySqlConnection conn)
+        {
             this.connection = conn;
         }
         public Cliente Login(string cpf, string password)
         {
             Cliente c = new Cliente();
             string sql = "SELECT * FROM CLIENTES WHERE CPF = ? AND SENHA = ?";
-            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlCommand command = new MySqlCommand(sql);
             command.Parameters.Add("@cpf", MySqlDbType.String).Value = cpf;
             command.Parameters.Add("@senha", MySqlDbType.String).Value = password;
             MySqlDataReader reader = command.ExecuteReader();
-            if(reader.Read())
+            if (reader.Read())
             {
                 c.Id = reader.GetInt32("ID");
                 c.DataNascimento = reader.GetDateTime("DATA_NASCIMENTO");
@@ -36,7 +37,7 @@ namespace ApiGerenciamento.Repositories
         {
             string sql = @"INSERT INTO CLIENTES (DATA_REGISTRO, DATA_NASCIMENTO, NOME, EMAIL, ENDERECO, CPF, CREDITO, SENHA) 
                 VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlCommand command = new MySqlCommand(sql);
             command.Parameters.Add("@DATA_REGISTRO", MySqlDbType.Date).Value = c.DataRegistro;
             command.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Date).Value = c.DataNascimento;
             command.Parameters.Add("@NOME", MySqlDbType.String).Value = c.Nome;
@@ -47,10 +48,10 @@ namespace ApiGerenciamento.Repositories
             command.Parameters.Add("@SENHA", MySqlDbType.String).Value = c.Senha;
             command.ExecuteNonQuery();
         }
-        public void Excluir (int id)
+        public void Excluir(int id)
         {
             string sql = "DELETE FROM CLIENTES WHERE ID = ?";
-            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlCommand command = new MySqlCommand(sql);
             command.Parameters.Add("@ID", MySqlDbType.Int32).Value = id;
             command.ExecuteNonQuery();
         }
@@ -58,7 +59,7 @@ namespace ApiGerenciamento.Repositories
         {
             Cliente c = new Cliente();
             string sql = "SELECT * FROM CLIENTES WHERE ID = ?";
-            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlCommand command = new MySqlCommand(sql);
             command.Parameters.Add("@ID", MySqlDbType.String).Value = id;
             MySqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
@@ -75,11 +76,11 @@ namespace ApiGerenciamento.Repositories
             }
             return c;
         }
-        public void Alterar (Cliente c)
+        public void Alterar(Cliente c)
         {
             string sql = @"UPDATE CLIENTES SET DATA_NASCIMENTO = ?, NOME = ?, EMAIL = ?, ENDERECO = ?, 
             CPF = ?, SENHA = ? WHERE ID = ?";
-            MySqlCommand command = new MySqlCommand (sql, connection);
+            MySqlCommand command = new MySqlCommand(sql);
             command.Parameters.Add("@DATA_NASCIMENTO", MySqlDbType.Date).Value = c.DataNascimento;
             command.Parameters.Add("@NOME", MySqlDbType.String).Value = c.Nome;
             command.Parameters.Add("@EMAIL", MySqlDbType.String).Value = c.Email;
