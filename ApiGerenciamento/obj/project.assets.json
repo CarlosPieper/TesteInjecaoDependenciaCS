@@ -12470,24 +12470,22 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Gerenciamento\\ApiGerenciamento\\ApiGerenciamento.csproj",
+      "projectUniqueName": "C:\\Gerenciamento\\apigerenciamento\\ApiGerenciamento.csproj",
       "projectName": "ApiGerenciamento",
-      "projectPath": "C:\\Gerenciamento\\ApiGerenciamento\\ApiGerenciamento.csproj",
+      "projectPath": "C:\\Gerenciamento\\apigerenciamento\\ApiGerenciamento.csproj",
       "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-      "outputPath": "C:\\Gerenciamento\\ApiGerenciamento\\obj\\",
+      "outputPath": "C:\\Gerenciamento\\apigerenciamento\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
