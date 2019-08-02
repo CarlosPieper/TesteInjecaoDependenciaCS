@@ -1,6 +1,7 @@
 using System;
 
-namespace ApiGerenciamento.Models{
+namespace ApiGerenciamento.Models
+{
     public class Cliente
     {
         public int Id { get; set; }
