@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ApiGerenciamento.Interfaces;
 using ApiGerenciamento.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -99,6 +100,16 @@ namespace ApiGerenciamento.Controllers
                 throw ex;
             }
             return success;
+        }
+        #endregion
+
+        #region ListarPaginado
+        [ActionName("ListarPaginado")]
+        [HttpPost]
+        public List<Cliente> ListarPaginado(int start, int limit)
+        {
+            List<Cliente> clientes = repositorio.ListarPaginado(start, limit);
+            return clientes;
         }
         #endregion
     }

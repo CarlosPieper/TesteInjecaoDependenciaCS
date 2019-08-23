@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ApiGerenciamento.Interfaces;
 using ApiGerenciamento.Models;
 using MySql.Data.MySqlClient;
@@ -36,6 +37,34 @@ namespace ApiGerenciamento.Repositories
                 }
             }
             return c;
+        }
+        public List<Cliente> ListarPaginado(int start, int limit)
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            string sql = "SELECT * FROM CLIENTES LIMIT START, LIMIT";
+            using (MySqlCommand command = new MySqlCommand(sql, connection))
+            {
+                command.Parameters.Add("@start", MySqlDbType.String).Value = start;
+                command.Parameters.Add("@limit", MySqlDbType.String).Value = limit;
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Cliente c = new Cliente();
+                        c.Id = reader.GetInt32("ID");
+                        c.DataNascimento = reader.GetDateTime("DATA_NASCIMENTO");
+                        c.DataRegistro = reader.GetDateTime("DATA_REGISTRO");
+                        c.Nome = reader.GetString("NOME");
+                        c.Email = reader.GetString("EMAIL");
+                        c.Endereco = reader.GetString("ENDERECO");
+                        c.Cpf = reader.GetString("CPF");
+                        c.Credito = reader.GetDecimal("CREDITO");
+                        c.Senha = reader.GetString("SENHA");
+                        clientes.Add(c);
+                    }
+                }
+            }
+            return clientes;
         }
         public void Incluir(Cliente c)
         {

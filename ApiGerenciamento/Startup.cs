@@ -36,6 +36,7 @@ namespace ApiGerenciamento
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<MySqlConnection>(connection);
             services.AddSingleton<IClienteRepository, ClienteRepository>();
+            services.AddSingleton<IProdutoRepository, ProdutoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
